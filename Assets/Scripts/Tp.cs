@@ -22,7 +22,7 @@ public class Tp: MonoBehaviour {
 			playerController = collision.GetComponent<PlayerController>();
 
 
-			if (playerController.useController && collision.transform.parent.tag == "Player" || collision.transform.parent.tag == "Player2")
+			if (playerController.useController && collision.transform.parent.tag == "Player" || playerController.useController && collision.transform.parent.tag == "Player2")
 			{
 				playerController = collision.GetComponent<PlayerController>();
 
@@ -35,7 +35,7 @@ public class Tp: MonoBehaviour {
 			}
 			else
 			{
-				if (Input.GetKeyDown(KeyCode.E) && collision.transform.parent.tag == "Player" || collision.transform.parent.tag == "Player2")
+				if (Input.GetKeyDown(KeyCode.E) && collision.transform.parent.tag == "Player" || Input.GetKeyDown(KeyCode.E) && collision.transform.parent.tag == "Player2")
 				{
 					game.SaveData();
 					SceneManager.LoadScene(sceneToLoad);

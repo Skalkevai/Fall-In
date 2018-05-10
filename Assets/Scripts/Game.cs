@@ -12,6 +12,7 @@ public class Game : MonoBehaviour {
 	public GameObject ammo2Player;
 	public CameraController camera;
 	public GameObject player2;
+	public GameObject abilityPlayer2;
 
 	[Header("SaveData")]
 	public int credit;
@@ -48,9 +49,9 @@ public class Game : MonoBehaviour {
 		{
 			camera.players.Remove(camera.players[1]);
 
-				life2Player.SetActive(false);
-				ammo2Player.SetActive(false);
-
+			life2Player.SetActive(false);
+			ammo2Player.SetActive(false);
+			abilityPlayer2.SetActive(false);
 			player2.SetActive(false);
 		}
 
@@ -186,24 +187,27 @@ public class Game : MonoBehaviour {
 		player2Ability1 = PlayerPrefs.GetString("player2Ability1");
 		player2Ability2 = PlayerPrefs.GetString("player2Ability2");
 
-		if (PlayerPrefs.GetString("fog") == "True")
+		if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Shop"))
 		{
-			fog.SetActive(true);
-		}
-		else
-		{
-			fog.SetActive(false);
-		}
+			if (PlayerPrefs.GetString("fog") == "True")
+			{
+				fog.SetActive(true);
+			}
+			else
+			{
+				fog.SetActive(false);
+			}
 
-		if (PlayerPrefs.GetString("particle") == "True")
-		{
-			darkParticle.SetActive(true);
-		}
-		else
-		{
-			darkParticle.SetActive(false);
-		}
+			if (PlayerPrefs.GetString("particle") == "True")
+			{
+				darkParticle.SetActive(true);
+			}
+			else
+			{
+				darkParticle.SetActive(false);
+			}
 
+		}
 		mainVolumeFloat = PlayerPrefs.GetFloat("mainVolume");
 		musicVolumeFloat = PlayerPrefs.GetFloat("musicVolume");
 		effectVolumeFloat = PlayerPrefs.GetFloat("effectVolume");

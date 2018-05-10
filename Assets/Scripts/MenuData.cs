@@ -170,6 +170,11 @@ public class MenuData : MonoBehaviour {
             
     }
 
+	public void ResetSave()
+	{
+		PlayerPrefs.DeleteAll();
+	}
+
     public void CloseGame()
     {
         SaveData();
