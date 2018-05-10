@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChocWave : MonoBehaviour {
 
@@ -21,6 +22,23 @@ public class ChocWave : MonoBehaviour {
 
 	public void Update()
 	{
+		if (countdown && playerController.ability1.GetComponent<Image>().sprite.name == "Wave")
+		{
+			playerController.ability1.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.25f);
+		}
+		else if (countdown && playerController.ability2.GetComponent<Image>().sprite.name == "Wave")
+		{
+			playerController.ability2.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.25f);
+		}
+		else if (!countdown && playerController.ability1.GetComponent<Image>().sprite.name == "Wave")
+		{
+			playerController.ability1.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+		}
+		else if (!countdown && playerController.ability2.GetComponent<Image>().sprite.name == "Wave")
+		{
+			playerController.ability2.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+		}
+
 		if (playerController.useController)
 		{
 			if (playerController.controller.Action4.WasPressed && !countdown)
@@ -51,7 +69,6 @@ public class ChocWave : MonoBehaviour {
 
 	public void Choc()
 	{
-		Debug.Log("ChocWave");
 		GameObject _chocWave = Instantiate(chocWave,gameObject.transform.position,Quaternion.identity);
 		Destroy(_chocWave,2f);
 	}

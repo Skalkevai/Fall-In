@@ -12,15 +12,27 @@ public class Player : MonoBehaviour {
 	public string ability1;
 	public string ability2;
 
+	public GameObject abilityPicture1;
+	public GameObject abilityPicture2;
+
 	public GameObject wave;
+	public Sprite wavePicture;
 	public GameObject shield;
+	public Sprite shieldPicture;
 	public GameObject dash;
+	public Sprite dashPicture;
 	public GameObject teleport;
+	public Sprite teleportPicture;
 	public GameObject heartUpgrade;
+	public Sprite heartUpgradePicture;
 	public GameObject ammoUpgrade;
+	public Sprite ammoUpgradePicture;
 	public GameObject weaponUpgrade;
+	public Sprite weaponUpgradePicture;
 	public GameObject jump;
+	public Sprite jumpPicture;
 	public GameObject revive;
+	public Sprite revivePicture;
 
 	[Header("Life")]
 	public int life;
@@ -164,60 +176,104 @@ public class Player : MonoBehaviour {
 		switch (ability1)
 		{
 			case "Wave":
+				abilityPicture1.SetActive(true);
+				abilityPicture1.GetComponent<Image>().sprite = wavePicture;
 				wave.SetActive(true);
 				break;
 			case "Shield":
-				wave.SetActive(true);
+				abilityPicture1.SetActive(true);
+				abilityPicture1.GetComponent<Image>().sprite = shieldPicture;
+				shield.SetActive(true);
 				break;
 			case "Dash":
+				abilityPicture1.SetActive(true);
+				abilityPicture1.GetComponent<Image>().sprite = dashPicture;
+				dash.SetActive(true);
 				break;
 			case "Teleport":
-				wave.SetActive(true);
+				abilityPicture1.SetActive(true);
+				abilityPicture1.GetComponent<Image>().sprite = teleportPicture;
+				teleport.SetActive(true);
 				break;
 			case "Jump":
-				wave.SetActive(true);
+				abilityPicture1.SetActive(true);
+				abilityPicture1.GetComponent<Image>().sprite = jumpPicture;
+				jump.SetActive(true);
 				break;
 			case "Revive":
-				wave.SetActive(true);
+				abilityPicture1.SetActive(true);
+				abilityPicture1.GetComponent<Image>().sprite = revivePicture;
+				revive.SetActive(true);
 				break;
 			case "HeartUpgrade":
-				wave.SetActive(true);
+				abilityPicture1.SetActive(true);
+				abilityPicture1.GetComponent<Image>().sprite = heartUpgradePicture;
+				heartUpgrade.SetActive(true);
 				break;
 			case "AmmoUpgrade":
-				wave.SetActive(true);
+				abilityPicture1.SetActive(true);
+				abilityPicture1.GetComponent<Image>().sprite = ammoUpgradePicture;
+				ammoUpgrade.SetActive(true);
 				break;
 			case "WeaponUpgrade":
-				wave.SetActive(true);
+				abilityPicture1.SetActive(true);
+				abilityPicture1.GetComponent<Image>().sprite = weaponUpgradePicture;
+				weaponUpgrade.SetActive(true);
+				break;
+			default:
+				abilityPicture1.SetActive(false);
 				break;
 		}
 
 		switch (ability2)
 		{
 			case "Wave":
+				abilityPicture2.SetActive(true);
+				abilityPicture2.GetComponent<Image>().sprite = wavePicture;
 				wave.SetActive(true);
 				break;
 			case "Shield":
-				wave.SetActive(true);
+				abilityPicture2.SetActive(true);
+				abilityPicture2.GetComponent<Image>().sprite = shieldPicture;
+				shield.SetActive(true);
 				break;
 			case "Dash":
+				abilityPicture2.SetActive(true);
+				abilityPicture2.GetComponent<Image>().sprite = dashPicture;
+				dash.SetActive(true);
 				break;
 			case "Teleport":
-				wave.SetActive(true);
+				abilityPicture2.SetActive(true);
+				abilityPicture2.GetComponent<Image>().sprite = teleportPicture;
+				teleport.SetActive(true);
 				break;
 			case "Jump":
-				wave.SetActive(true);
+				abilityPicture2.SetActive(true);
+				abilityPicture2.GetComponent<Image>().sprite = jumpPicture;
+				jump.SetActive(true);
 				break;
 			case "Revive":
-				wave.SetActive(true);
+				abilityPicture2.SetActive(true);
+				abilityPicture2.GetComponent<Image>().sprite = revivePicture;
+				revive.SetActive(true);
 				break;
 			case "HeartUpgrade":
-				wave.SetActive(true);
+				abilityPicture2.SetActive(true);
+				abilityPicture2.GetComponent<Image>().sprite = heartUpgradePicture;
+				heartUpgrade.SetActive(true);
 				break;
 			case "AmmoUpgrade":
-				wave.SetActive(true);
+				abilityPicture2.SetActive(true);
+				abilityPicture2.GetComponent<Image>().sprite = ammoUpgradePicture;
+				ammoUpgrade.SetActive(true);
 				break;
 			case "WeaponUpgrade":
-				wave.SetActive(true);
+				abilityPicture2.SetActive(true);
+				abilityPicture2.GetComponent<Image>().sprite = weaponUpgradePicture;
+				weaponUpgrade.SetActive(true);
+				break;
+			default:
+				abilityPicture2.SetActive(false);
 				break;
 		}
 	}

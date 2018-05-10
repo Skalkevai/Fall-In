@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour {
 	public InputDevice controller;
 	public bool useController;
 
+	public GameObject ability1;
+	public GameObject ability2;
+
 	public bool isReload;
 	public float timeReload = 0f;
 
@@ -101,7 +104,7 @@ public class PlayerController : MonoBehaviour {
                     extraJump--;
                 }
             }
-            else if (controller.Action2.WasPressed)
+            else if (controller.Action2.WasPressed && !isReload)
             {
                 isReload = true;
                 GetComponent<Player>().Reload();

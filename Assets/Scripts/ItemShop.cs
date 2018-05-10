@@ -80,7 +80,6 @@ public class ItemShop : MonoBehaviour {
                 }
             }
             collision.GetComponentInChildren<Player>().ActiveAbility();
-            Debug.Log(name);
         }
         else
         {
