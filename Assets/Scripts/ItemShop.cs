@@ -32,6 +32,7 @@ public class ItemShop : MonoBehaviour {
 							alreadyGet = true;
 							Destroy(gameObject);
 							game.credit -= cost;
+							collision.GetComponentInChildren<Player>().ActiveAbility();
 						}
 						else if (GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player1Ability2 == "")
 						{
@@ -39,6 +40,7 @@ public class ItemShop : MonoBehaviour {
 							alreadyGet = true;
 							Destroy(gameObject);
 							game.credit -= cost;
+							collision.GetComponentInChildren<Player>().ActiveAbility();
 						}
 					}
 
@@ -50,6 +52,7 @@ public class ItemShop : MonoBehaviour {
 							alreadyGet = true;
 							Destroy(gameObject);
 							game.credit -= cost;
+							collision.GetComponentInChildren<Player>().ActiveAbility();
 						}
 						else if (GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player2Ability2 == "")
 						{
@@ -57,6 +60,7 @@ public class ItemShop : MonoBehaviour {
 							alreadyGet = true;
 							Destroy(gameObject);
 							game.credit -= cost;
+							collision.GetComponentInChildren<Player>().ActiveAbility();
 						}
 					}
 				}
@@ -71,6 +75,7 @@ public class ItemShop : MonoBehaviour {
 							alreadyGet = true;
 							Destroy(gameObject);
 							game.credit -= cost;
+							collision.GetComponentInChildren<Player>().ActiveAbility();
 						}
 						else if(GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player1Ability2 == "")
 						{
@@ -78,6 +83,7 @@ public class ItemShop : MonoBehaviour {
 							alreadyGet = true;
 							Destroy(gameObject);
 							game.credit -= cost;
+							collision.GetComponentInChildren<Player>().ActiveAbility();
 						}
 					}
 					else if (collision.GetComponentInChildren<Player>().player.tag == "Player2")
@@ -88,6 +94,7 @@ public class ItemShop : MonoBehaviour {
 							alreadyGet = true;
 							Destroy(gameObject);
 							game.credit -= cost;
+							collision.GetComponentInChildren<Player>().ActiveAbility();
 						}
 						else if(GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player2Ability2 == "")
 						{
@@ -95,10 +102,10 @@ public class ItemShop : MonoBehaviour {
 							alreadyGet = true;
 							Destroy(gameObject);
 							game.credit -= cost;
+							collision.GetComponentInChildren<Player>().ActiveAbility();
 						}
 					}
 				}
-				collision.GetComponentInChildren<Player>().ActiveAbility();
 			}
 			else
 			{

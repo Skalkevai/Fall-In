@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Skalkevai/Desktop/Test Fall-In(.exe)/Fall-In.v.1.1.exe
+C:/Users/Skalkevai/Desktop/Test Fall-In(.exe)/Fall-In.v.0.2.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Lobby.unity
@@ -25,6 +25,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 92d7a83ea3c7404e484f3b2eed421855 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 81d3fa35f3270744d8c271fbb7597c65 Assembly-CSharp.dll:.PlayerGhostSprite
+f418ebc9856de92e9f32f6c45e85098d Assembly-CSharp.dll:.DeathScreen
 5a9dd961ed8a162eba116d3855056609 Assembly-CSharp.dll:.CameraController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:InControl.UnityInputDeviceProfileList
 27d04b2a783c95726802d1faeca7d764 Assembly-CSharp.dll:.AudioManager
@@ -213,6 +214,7 @@ f22b8ce780e323c542ba1f52d9080ac6 Assembly-CSharp.dll:.MapGenerator
 963f2b1316b54e6129df212d9f42f503 Assembly-CSharp.dll:.AI_MonsterWall
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:ProGrids.pg_IgnoreSnap
 81d3fa35f3270744d8c271fbb7597c65 Assembly-CSharp.dll:.PlayerGhostSprite2
+d5de916c074b6f9282b0e1b1a9dd8d66 Assembly-CSharp.dll:.TimeManager
 8a50d3d11bf0cc541f5c35347dd25633 Assembly-CSharp.dll:TMPro.Examples.ShaderPropAnimator
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CameraShake
 5d4867a4ee62ca1cb1833420a21abefe Assembly-CSharp.dll:.ChocWave
@@ -277,5 +279,3 @@ f999c6834c7ccef185f69e1b669958cf Assembly-CSharp.dll:.Tp
 22504aca875bfe9807f9961840091822 Assembly-CSharp.dll:.Mission
 34e025057ef78b1bf238460cdf6583a3 Assembly-CSharp.dll:TMPro.Examples.ObjectSpin
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.SimpleScript
-d5de916c074b6f9282b0e1b1a9dd8d66 Assembly-CSharp.dll:.TimeManager
-f418ebc9856de92e9f32f6c45e85098d Assembly-CSharp.dll:.DeathScreen

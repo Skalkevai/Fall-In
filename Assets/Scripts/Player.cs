@@ -67,7 +67,25 @@ public class Player : MonoBehaviour {
 		camera = cameraShake.GetComponent<CameraController>();
 
 		ActiveAbility();
-		
+
+		if (!PlayerPrefs.HasKey("life1"))
+		{
+			PlayerPrefs.SetInt("life1", 3);
+		}
+		if (!PlayerPrefs.HasKey("life2"))
+		{
+			PlayerPrefs.SetInt("life2", 3);
+		}
+
+		if (player.tag == "Player")
+		{
+			maxLife = PlayerPrefs.GetInt("life1");
+		}
+		else if (player.tag == "Player2")
+		{
+			maxLife = PlayerPrefs.GetInt("life2");
+		}
+
 		life = maxLife;
 		ammunition = maxAmmo;
 	}
@@ -79,6 +97,7 @@ public class Player : MonoBehaviour {
 		{
 			life = maxLife;
 		}
+
 			//Show the picture of number of heart
 			for (int i = 0; i < heart.Length; i++)
 			{
@@ -172,7 +191,6 @@ public class Player : MonoBehaviour {
 			ability2 = game.player2Ability2;
 		}
 
-
 		switch (ability1)
 		{
 			case "Wave":
@@ -206,9 +224,17 @@ public class Player : MonoBehaviour {
 				revive.SetActive(true);
 				break;
 			case "HeartUpgrade":
-				abilityPicture1.SetActive(true);
-				abilityPicture1.GetComponent<Image>().sprite = heartUpgradePicture;
-				heartUpgrade.SetActive(true);
+				maxLife++;
+				life = maxLife;
+
+				if (player.tag == "Player")
+				{
+					PlayerPrefs.SetInt("life1", maxLife);
+				}
+				else
+				{
+					PlayerPrefs.SetInt("life2", maxLife);
+				}
 				break;
 			case "AmmoUpgrade":
 				abilityPicture1.SetActive(true);
@@ -258,9 +284,16 @@ public class Player : MonoBehaviour {
 				revive.SetActive(true);
 				break;
 			case "HeartUpgrade":
-				abilityPicture2.SetActive(true);
-				abilityPicture2.GetComponent<Image>().sprite = heartUpgradePicture;
-				heartUpgrade.SetActive(true);
+				maxLife++;
+				life = maxLife;
+				if (player.tag == "Player")
+				{
+					PlayerPrefs.SetInt("life1", maxLife);
+				}
+				else
+				{
+					PlayerPrefs.SetInt("life2", maxLife);
+				}
 				break;
 			case "AmmoUpgrade":
 				abilityPicture2.SetActive(true);
@@ -275,6 +308,35 @@ public class Player : MonoBehaviour {
 			default:
 				abilityPicture2.SetActive(false);
 				break;
+		}
+
+		if(player.tag == "Player")
+		{
+			if (ability1 == "HeartUpgrade")
+			{
+				ability1 = "";
+				game.player1Ability1 = "";
+			}
+			else if (ability2 == "HeartUpgrade")
+			{
+				ability2 = "";
+				game.player1Ability2 = "";
+			}
+		}
+
+		if (player.tag == "Player2")
+		{
+			if (ability1 == "HeartUpgrade")
+			{
+				ability1 = "";
+				game.player2Ability1 = "";
+
+			}
+			else if (ability2 == "HeartUpgrade")
+			{
+				ability2 = "";
+				game.player2Ability2 = "";
+			}
 		}
 	}
 
