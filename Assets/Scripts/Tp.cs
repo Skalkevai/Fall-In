@@ -17,6 +17,7 @@ public class Tp: MonoBehaviour {
 
 	private void OnTriggerStay2D(Collider2D collision)
 	{
+
 			if (collision.transform.parent.tag == "Player" || collision.transform.parent.tag == "Player2")
 			{
 				playerController = collision.GetComponent<PlayerController>();
@@ -43,5 +44,10 @@ public class Tp: MonoBehaviour {
 
 				}
 			}
+
+		if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level1"))
+		{
+			game.credit += 200;
+		}
 	}
 }

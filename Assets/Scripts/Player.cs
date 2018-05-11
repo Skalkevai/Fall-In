@@ -166,7 +166,7 @@ public class Player : MonoBehaviour {
 			ability1 = game.player1Ability1;
 			ability2 = game.player1Ability2;
 		}
-		else
+		else if(player.tag == "Player2")
 		{
 			ability1 = game.player2Ability1;
 			ability2 = game.player2Ability2;
@@ -198,7 +198,7 @@ public class Player : MonoBehaviour {
 			case "Jump":
 				abilityPicture1.SetActive(true);
 				abilityPicture1.GetComponent<Image>().sprite = jumpPicture;
-				jump.SetActive(true);
+				GetComponent<PlayerController>().extraJumpValue++;
 				break;
 			case "Revive":
 				abilityPicture1.SetActive(true);
@@ -250,7 +250,7 @@ public class Player : MonoBehaviour {
 			case "Jump":
 				abilityPicture2.SetActive(true);
 				abilityPicture2.GetComponent<Image>().sprite = jumpPicture;
-				jump.SetActive(true);
+				GetComponent<PlayerController>().extraJumpValue++;
 				break;
 			case "Revive":
 				abilityPicture2.SetActive(true);

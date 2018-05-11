@@ -20,7 +20,7 @@ public class ItemShop : MonoBehaviour {
 
 		else
 		{
-			if (collision.GetComponentInChildren<Player>().ability1 != name && collision.GetComponentInChildren<Player>().ability1 != name)
+			if (!(collision.GetComponentInChildren<Player>().ability1 == name || collision.GetComponentInChildren<Player>().ability2 == name))
 			{
 				if (collision.GetComponentInChildren<PlayerController>().useController && collision.GetComponentInChildren<PlayerController>().controller.Action3.WasReleased && !alreadyGet)
 				{
@@ -33,7 +33,7 @@ public class ItemShop : MonoBehaviour {
 							Destroy(gameObject);
 							game.credit -= cost;
 						}
-						else
+						else if (GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player1Ability2 == "")
 						{
 							GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player1Ability2 = name;
 							alreadyGet = true;
@@ -51,7 +51,7 @@ public class ItemShop : MonoBehaviour {
 							Destroy(gameObject);
 							game.credit -= cost;
 						}
-						else
+						else if (GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player2Ability2 == "")
 						{
 							GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player2Ability2 = name;
 							alreadyGet = true;
@@ -72,7 +72,7 @@ public class ItemShop : MonoBehaviour {
 							Destroy(gameObject);
 							game.credit -= cost;
 						}
-						else
+						else if(GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player1Ability2 == "")
 						{
 							GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player1Ability2 = name;
 							alreadyGet = true;
@@ -89,7 +89,7 @@ public class ItemShop : MonoBehaviour {
 							Destroy(gameObject);
 							game.credit -= cost;
 						}
-						else
+						else if(GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player2Ability2 == "")
 						{
 							GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player2Ability2 = name;
 							alreadyGet = true;
