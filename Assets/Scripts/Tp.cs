@@ -17,31 +17,31 @@ public class Tp: MonoBehaviour {
 
 	private void OnTriggerStay2D(Collider2D collision)
 	{
-		if (collision.transform.parent.tag == "Player" || collision.transform.parent.tag == "Player2")
-		{
-			playerController = collision.GetComponent<PlayerController>();
-
-
-			if (playerController.useController && collision.transform.parent.tag == "Player" || playerController.useController && collision.transform.parent.tag == "Player2")
+			if (collision.transform.parent.tag == "Player" || collision.transform.parent.tag == "Player2")
 			{
 				playerController = collision.GetComponent<PlayerController>();
 
-				if (playerController.controller.Action3)
-				{
-					game.SaveData();
-					SceneManager.LoadScene(sceneToLoad);
-				}
 
-			}
-			else
-			{
-				if (Input.GetKeyDown(KeyCode.E) && collision.transform.parent.tag == "Player" || Input.GetKeyDown(KeyCode.E) && collision.transform.parent.tag == "Player2")
+				if (playerController.useController && collision.transform.parent.tag == "Player" || playerController.useController && collision.transform.parent.tag == "Player2")
 				{
-					game.SaveData();
-					SceneManager.LoadScene(sceneToLoad);
-				}
+					playerController = collision.GetComponent<PlayerController>();
 
+					if (playerController.controller.Action3)
+					{
+						game.SaveData();
+						SceneManager.LoadScene(sceneToLoad);
+					}
+
+				}
+				else
+				{
+					if (Input.GetKeyDown(KeyCode.E) && collision.transform.parent.tag == "Player" || Input.GetKeyDown(KeyCode.E) && collision.transform.parent.tag == "Player2")
+					{
+						game.SaveData();
+						SceneManager.LoadScene(sceneToLoad);
+					}
+
+				}
 			}
-		}
 	}
 }

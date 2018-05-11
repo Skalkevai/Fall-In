@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using InControl;
+using TMPro;
 using System;
 
 public class Game : MonoBehaviour {
@@ -13,6 +14,7 @@ public class Game : MonoBehaviour {
 	public CameraController camera;
 	public GameObject player2;
 	public GameObject abilityPlayer2;
+	public TextMeshProUGUI creditText;
 
 	[Header("SaveData")]
 	public int credit;
@@ -21,13 +23,18 @@ public class Game : MonoBehaviour {
 	public string player1Ability2;
 	public string player2Ability1;
 	public string player2Ability2;
-
 	public GameObject fog;
 	public GameObject darkParticle;
-
 	public float mainVolumeFloat;
 	public float musicVolumeFloat;
 	public float effectVolumeFloat;
+
+	[Header("Mission")]
+	public string missionName;
+	public string missionLvl;
+	public int missionReward;
+	public string missionDescription;
+	public bool missionIsAchieved;
 
 	[Header("Controller")]
 	public InputDevice controller1;
@@ -40,6 +47,11 @@ public class Game : MonoBehaviour {
 	public bool player1Gamepad;
 	public bool player2Gamepad;
 	public int nbController;
+
+	private void Update()
+	{
+		creditText.text = credit + "$";
+	}
 
 	private void Awake()
 	{
@@ -108,7 +120,7 @@ public class Game : MonoBehaviour {
 
 	public void SaveData()
 	{
-		PlayerPrefs.SetInt("Credit",PlayerPrefs.GetInt("Credit")+credit);
+		PlayerPrefs.SetInt("Credit",credit);
 
 		if (multi)
 		{
@@ -139,7 +151,20 @@ public class Game : MonoBehaviour {
 		PlayerPrefs.SetString("player1Ability2", player1Ability2);
 		PlayerPrefs.SetString("player2Ability1", player2Ability1);
 		PlayerPrefs.SetString("player2Ability2", player2Ability2);
-		PlayerPrefs.Save();
+
+		PlayerPrefs.SetString("missionName",missionName);
+		PlayerPrefs.SetString("missionLvl",missionLvl);
+		PlayerPrefs.SetInt("reward",missionReward);
+		PlayerPrefs.SetString("description",missionDescription);
+
+		if (missionIsAchieved)
+		{
+			PlayerPrefs.SetString("isAchieved", "True");
+		}
+		else
+		{
+			PlayerPrefs.SetString("isAchieved", "False");
+		}
 	}
 
 	private void LoadData()
@@ -187,7 +212,7 @@ public class Game : MonoBehaviour {
 		player2Ability1 = PlayerPrefs.GetString("player2Ability1");
 		player2Ability2 = PlayerPrefs.GetString("player2Ability2");
 
-		if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Shop"))
+		if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Shop")&& SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Bar"))
 		{
 			if (PlayerPrefs.GetString("fog") == "True")
 			{
@@ -211,5 +236,19 @@ public class Game : MonoBehaviour {
 		mainVolumeFloat = PlayerPrefs.GetFloat("mainVolume");
 		musicVolumeFloat = PlayerPrefs.GetFloat("musicVolume");
 		effectVolumeFloat = PlayerPrefs.GetFloat("effectVolume");
+
+		missionName = PlayerPrefs.GetString("missionName");
+		missionLvl = PlayerPrefs.GetString("missionLvl");
+		missionReward = PlayerPrefs.GetInt("reward");
+		missionDescription = PlayerPrefs.GetString("description");
+
+		if (PlayerPrefs.GetString("isAchieved") == "True")
+		{
+			missionIsAchieved = true;
+		}
+		else
+		{
+			missionIsAchieved = false;
+		}
 	}
 }
