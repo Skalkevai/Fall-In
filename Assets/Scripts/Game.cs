@@ -8,6 +8,12 @@ using System;
 
 public class Game : MonoBehaviour {
 
+	[Header("DeathScreen")]
+	public GameObject deathScreen;
+	public TimeManager timeManager;
+	public GameObject canvas;
+	public bool alreadyDead;
+
 	[Header("MultiPlayer UI")]
 	public GameObject life2Player;
 	public GameObject ammo2Player;
@@ -50,11 +56,20 @@ public class Game : MonoBehaviour {
 
 	private void Update()
 	{
+		if (camera.players.Count == 0 && !alreadyDead)
+		{
+			timeManager.DoSlownMotion();
+			GameObject _deathScreen = Instantiate(deathScreen,canvas.transform.position,Quaternion.identity);
+			_deathScreen.transform.SetParent(canvas.transform);
+			alreadyDead = true;
+		}
+
 		creditText.text = credit + "$";
 	}
 
 	private void Awake()
 	{
+		Time.timeScale = 1f;
 		LoadData();
 
 		if (!multi)

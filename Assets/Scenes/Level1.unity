@@ -515,7 +515,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &120244532
 MonoBehaviour:
@@ -1330,8 +1330,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 339622087}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.49, y: -991.39, z: 1}
-  m_LocalScale: {x: 5, y: 2000, z: 1}
+  m_LocalPosition: {x: -93.84, y: -991.39, z: 1}
+  m_LocalScale: {x: 177.70494, y: 2000, z: 1}
   m_Children: []
   m_Father: {fileID: 1122314649}
   m_RootOrder: 0
@@ -1405,6 +1405,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &355302770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 355302771}
+  - component: {fileID: 355302772}
+  m_Layer: 0
+  m_Name: TimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &355302771
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 355302770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &355302772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 355302770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b5e4485f42c324abd4aca37208e1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowdownFactor: 0.1
+  slowdownLenght: 2
+  audioManager: {fileID: 0}
 --- !u!1 &359287248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,7 +2212,7 @@ Transform:
   - {fileID: 1539805710}
   - {fileID: 54449362}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &573857847
 GameObject:
@@ -2198,7 +2241,7 @@ Transform:
   m_Children:
   - {fileID: 1587370501}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &574600289
 GameObject:
@@ -2609,6 +2652,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea724644333523745b80538a223a84c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathScreen: {fileID: 1978156741001584, guid: 5c249a8908fe081498906ed549425e1b,
+    type: 2}
+  timeManager: {fileID: 355302772}
+  canvas: {fileID: 1742937555}
+  alreadyDead: 0
   life2Player: {fileID: 481435202}
   ammo2Player: {fileID: 1977408201}
   camera: {fileID: 1587370503}
@@ -2629,7 +2677,9 @@ MonoBehaviour:
   effectVolumeFloat: 0
   missionName: 
   missionLvl: 
-  bounty: 0
+  missionReward: 0
+  missionDescription: 
+  missionIsAchieved: 0
   playerController1: {fileID: 1509790411}
   playerController2: {fileID: 1539805713}
   multi: 0
@@ -3047,7 +3097,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &810116841
 GameObject:
@@ -3492,7 +3542,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &977861627
 GameObject:
@@ -3858,7 +3908,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2125703056
+  randomSeed: 1574890802
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7372,7 +7422,7 @@ Transform:
   - {fileID: 327596889}
   - {fileID: 1974521308}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1122314650
 MonoBehaviour:
@@ -8192,7 +8242,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 154690913
+  randomSeed: 2028512614
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -12127,8 +12177,9 @@ RectTransform:
   - {fileID: 1177877319}
   - {fileID: 1977408202}
   - {fileID: 1362997158}
+  - {fileID: 1742937556}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12797,16 +12848,16 @@ MonoBehaviour:
   life: 3
   maxLife: 3
   heart:
-  - {fileID: 228887546}
-  - {fileID: 2021862378}
-  - {fileID: 2099527179}
-  - {fileID: 1255898015}
-  - {fileID: 503125503}
-  - {fileID: 253837423}
-  - {fileID: 1705659485}
-  - {fileID: 1809290453}
-  - {fileID: 1494842112}
   - {fileID: 435057124}
+  - {fileID: 1494842112}
+  - {fileID: 1809290453}
+  - {fileID: 1705659485}
+  - {fileID: 253837423}
+  - {fileID: 503125503}
+  - {fileID: 1255898015}
+  - {fileID: 2099527179}
+  - {fileID: 2021862378}
+  - {fileID: 228887546}
   fullHeart: {fileID: 21300002, guid: c970c83f1f71dff49bfc897c1ead214f, type: 3}
   emptyHeart: {fileID: 21300004, guid: c970c83f1f71dff49bfc897c1ead214f, type: 3}
   ammunition: 0
@@ -13467,7 +13518,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1930337341
+  randomSeed: 1767050066
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -16822,8 +16873,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1637728497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.48, y: -991.39, z: 1}
-  m_LocalScale: {x: 5, y: 2000, z: 1}
+  m_LocalPosition: {x: 115.7, y: -991.39, z: 1}
+  m_LocalScale: {x: 221.43027, y: 2000, z: 1}
   m_Children: []
   m_Father: {fileID: 1122314649}
   m_RootOrder: 1
@@ -17150,6 +17201,34 @@ Transform:
   - {fileID: 1509790408}
   - {fileID: 1201569538}
   m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1742937555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1742937556}
+  m_Layer: 0
+  m_Name: DeathScreenPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1742937556
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1742937555}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1377186603}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1781642180

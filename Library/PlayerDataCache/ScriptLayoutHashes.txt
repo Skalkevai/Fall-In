@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Skalkevai/Desktop/UnityProject/Fall-In/Fall-In.v.1.0.exe
+C:/Users/Skalkevai/Desktop/Test Fall-In(.exe)/Fall-In.v.1.1.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Lobby.unity
@@ -96,6 +96,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 6a492d7b8465b2c00d15794caa46ec2e Assembly-CSharp.dll:TMPro.Examples.TMPro_InstructionOverlay
 3ecea0c2e43f5d97a17c441bfcf59a7d Assembly-CSharp.dll:UnityEngine.PostProcessing.PostProcessingBehaviour
+9fbd374c72271da518016ba4d1be62af Assembly-CSharp.dll:.Dialog
 765037da3d8faeee91e39d672b924c61 Assembly-CSharp.dll:.EnvMapAnimator
 7997352e884cc9307fbb5672e00811b6 Assembly-CSharp.dll:.Bullet
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -128,10 +129,10 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-484efcac4149d1006529c9af1eb38ff5 Assembly-CSharp.dll:.Shop
+227042aea4f2a82c2709f5182e774dde Assembly-CSharp.dll:.Shop
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.TMP_PhoneNumberValidator
 0841d6aeba38aa66bdaf0f138a4206ac Assembly-CSharp.dll:.Player
-7d870973c3ee929e607b43a13537e20d Assembly-CSharp.dll:.Game
+3ed4fb892845798c4d2001ff5392b03f Assembly-CSharp.dll:.Game
 aa5f6348b089bbbceee2cefa18e67f04 Assembly-CSharp.dll:InterfaceMovement.ButtonManager
 1957a9369e72d2661ae9d0de26e7d064 Assembly-CSharp.dll:TMPro.Examples.WarpTextExample
 f4bd1aee67eeef7953cce6c44588b3d7 TextMeshPro-2017.3-1.0.56-Runtime.dll:TMPro.TextContainer
@@ -233,6 +234,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 7d24e0e76478e38c7917cb6c30118c47 Assembly-CSharp.dll:MK.Glow.MKGlowFree
+6b6be2dd7f904e360928be332a082831 Assembly-CSharp.dll:.TpLevel
 62229a3e4d53ca59bec192e89627ed52 Assembly-CSharp.dll:TMPro.Examples.CameraController
 32301f58615cde7ec45077123c46f9ce Assembly-CSharp.dll:InterfaceMovement.Button
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
@@ -244,7 +246,7 @@ e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 aa9d1bd0cc771545f2ae1f63a6d0ed6a Assembly-CSharp.dll:TMPro.Examples.TMP_TextEventCheck
-85428d1425a367fca79ad826587547f8 Assembly-CSharp.dll:.ItemShop
+d4c5348732964bd92192ef0a503c39da Assembly-CSharp.dll:.ItemShop
 9e0ef5bf862444b5dc48b5a99554ce7c UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -272,5 +274,8 @@ afc52d27c3ec0bd47909e81bd45fbffa Assembly-CSharp.dll:TMPro.TMP_TextEventHandler
 40ee03862e5224e408fca8282a9f4f2f Assembly-CSharp.dll:InControl.InControlManager
 af7666733efcc974926d7d470e1732a6 Assembly-CSharp.dll:TMPro.Examples.SkewTextExample
 f999c6834c7ccef185f69e1b669958cf Assembly-CSharp.dll:.Tp
+22504aca875bfe9807f9961840091822 Assembly-CSharp.dll:.Mission
 34e025057ef78b1bf238460cdf6583a3 Assembly-CSharp.dll:TMPro.Examples.ObjectSpin
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.SimpleScript
+d5de916c074b6f9282b0e1b1a9dd8d66 Assembly-CSharp.dll:.TimeManager
+f418ebc9856de92e9f32f6c45e85098d Assembly-CSharp.dll:.DeathScreen
