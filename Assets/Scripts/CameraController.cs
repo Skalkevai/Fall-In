@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour {
 	public List<Transform> players;
 
 	public Vector3 offset;
+	public Vector3 offsetFix;
 	public Vector3 velocity;
 	private Vector3 newPositon;
 	public float smoothTime = .4f;
@@ -42,16 +43,15 @@ public class CameraController : MonoBehaviour {
 	{
 		Vector3 centerPoint = GetCenterPoint();
 
-		if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level1"))
+		if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Lobby"))
 		{
 			newPositon = new Vector3(0, centerPoint.y, 0) + offset;
+			transform.position = Vector3.SmoothDamp(transform.position, newPositon, ref velocity, smoothTime);
 		}
-		else if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Level1"))
+		else
 		{
-			newPositon = new Vector3(centerPoint.x,0, 0) + offset;
+			gameObject.transform.position = Vector3.SmoothDamp(transform.position, players[0].transform.position + offsetFix, ref velocity, smoothTime);
 		}
-
-		transform.position = Vector3.SmoothDamp(transform.position, newPositon, ref velocity, smoothTime);
 	}
 
 	private void Zoom()

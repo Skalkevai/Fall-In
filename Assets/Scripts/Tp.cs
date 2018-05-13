@@ -7,11 +7,13 @@ public class Tp: MonoBehaviour {
 
 	public PlayerController playerController;
 	public Game game;
+	private Camera camera;
 
-	public string sceneToLoad;
+	public Transform placeToSpawn;
 
 	public void Start()
 	{
+		camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		game = GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>();
 	}
 
@@ -30,8 +32,9 @@ public class Tp: MonoBehaviour {
 					if (playerController.controller.Action3)
 					{
 						game.SaveData();
-						SceneManager.LoadScene(sceneToLoad);
-					}
+						playerController.transform.parent.position = placeToSpawn.position;
+						camera.transform.position = placeToSpawn.position;
+				}
 
 				}
 				else
@@ -39,13 +42,14 @@ public class Tp: MonoBehaviour {
 					if (Input.GetKeyDown(KeyCode.E) && collision.transform.parent.tag == "Player" || Input.GetKeyDown(KeyCode.E) && collision.transform.parent.tag == "Player2")
 					{
 						game.SaveData();
-						SceneManager.LoadScene(sceneToLoad);
-					}
+						playerController.transform.parent.position = placeToSpawn.position;
+						camera.transform.position = placeToSpawn.position;
+				}
 
 				}
 			}
 
-		if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level1"))
+		if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Lobby"))
 		{
 			game.credit += 200;
 		}
