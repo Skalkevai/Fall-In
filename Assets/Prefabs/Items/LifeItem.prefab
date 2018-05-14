@@ -78,8 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3bedfa4fef210418b8d422b2b00c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: HeartUpgrade
-  cost: 250
+  name: Revive
+  cost: 500
 --- !u!212 &212017397764180656
 SpriteRenderer:
   m_ObjectHideFlags: 1

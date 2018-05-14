@@ -11,27 +11,25 @@ public class Player : MonoBehaviour {
 	[Header("Ability")]
 	public string ability1;
 	public string ability2;
-
+	public string upgrade;
 	public GameObject abilityPicture1;
 	public GameObject abilityPicture2;
 
+	[Header("Wave")]
 	public GameObject wave;
 	public Sprite wavePicture;
+	[Header("Shield")]
 	public GameObject shield;
 	public Sprite shieldPicture;
+	[Header("DashMove")]
 	public GameObject dash;
 	public Sprite dashPicture;
-	public GameObject teleport;
-	public Sprite teleportPicture;
-	public GameObject heartUpgrade;
-	public Sprite heartUpgradePicture;
-	public GameObject ammoUpgrade;
-	public Sprite ammoUpgradePicture;
+	[Header("WeaponUpgrade")]
 	public GameObject weaponUpgrade;
 	public Sprite weaponUpgradePicture;
-	public GameObject jump;
+	[Header("JumpUpgrade")]
 	public Sprite jumpPicture;
-	public GameObject revive;
+	[Header("Revive")]
 	public Sprite revivePicture;
 
 	[Header("Life")]
@@ -40,6 +38,7 @@ public class Player : MonoBehaviour {
 	public Image[] heart;
 	public Sprite fullHeart;
 	public Sprite emptyHeart;
+	public GameObject reviveEffect;
 
 	[Header("Ammunition")]
 	public int ammunition;
@@ -59,6 +58,7 @@ public class Player : MonoBehaviour {
 	public GameObject deathEffect;
 	public CameraShake cameraShake;
 	public CameraController camera;
+
 
 	// Use this for initialization
 	void Start()
@@ -92,6 +92,7 @@ public class Player : MonoBehaviour {
 
 	public void Update()
 	{
+
 		//current life can't go more than the maxlife
 		if (life > maxLife)
 		{
@@ -144,7 +145,20 @@ public class Player : MonoBehaviour {
 		//Detect if Dead
 		if (life <= 0)
 		{
-			Death();
+			if (ability1 == "Revive")
+			{
+				FakeDeath();
+				Invoke("Revive",1f);
+			}
+			else if (ability2 == "Revive")
+			{
+				FakeDeath();
+				Invoke("Revive", 1f);
+			}
+			else
+			{
+				Death();
+			}
 		}
 
         //Detect if need to reload
@@ -168,13 +182,64 @@ public class Player : MonoBehaviour {
 		//The player become half transparent
 		if (invincible)
 		{
-			gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.1f);
+			GetComponent<SpriteRenderer>().material.color = Color.red;
 		}
 		else
 		{
-			gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+			GetComponent<SpriteRenderer>().material.color = new Color32(30,30,30,255);
 		}
+	}
 
+	public void Revive()
+	{
+		life = maxLife;
+
+		GameObject _reviveEffect = Instantiate(reviveEffect,transform.position,Quaternion.identity);
+		_reviveEffect.transform.SetParent(player.gameObject.transform);
+		gameObject.SetActive(true);
+
+		if (ability1 == "Revive")
+		{
+			if (player.tag == "Player")
+			{
+				game.player1Ability1 = "";
+				ability1 = "";
+				ActiveAbility();
+				player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+			}
+			else
+			{
+				game.player2Ability1 = "";
+				ability1 = "";
+				ActiveAbility();
+				player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+			}
+		}
+		else if (ability2 == "Revive")
+		{
+			if (player.tag == "Player")
+			{
+				game.player1Ability2 = "";
+				ability2 = "";
+				ActiveAbility();
+				player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+			}
+			else
+			{
+				game.player2Ability2 = "";
+				ability2 = "";
+				ActiveAbility();
+				player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+			}
+		}
+	}
+
+	public void FakeDeath()
+	{
+		gameObject.SetActive(false);
+		player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+		GameObject _deathEffect = Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
+		Destroy(_deathEffect, 5f);
 	}
 
 	public void ActiveAbility()
@@ -208,11 +273,6 @@ public class Player : MonoBehaviour {
 				abilityPicture1.GetComponent<Image>().sprite = dashPicture;
 				dash.SetActive(true);
 				break;
-			case "Teleport":
-				abilityPicture1.SetActive(true);
-				abilityPicture1.GetComponent<Image>().sprite = teleportPicture;
-				teleport.SetActive(true);
-				break;
 			case "Jump":
 				abilityPicture1.SetActive(true);
 				abilityPicture1.GetComponent<Image>().sprite = jumpPicture;
@@ -221,25 +281,6 @@ public class Player : MonoBehaviour {
 			case "Revive":
 				abilityPicture1.SetActive(true);
 				abilityPicture1.GetComponent<Image>().sprite = revivePicture;
-				revive.SetActive(true);
-				break;
-			case "HeartUpgrade":
-				maxLife++;
-				life = maxLife;
-
-				if (player.tag == "Player")
-				{
-					PlayerPrefs.SetInt("life1", maxLife);
-				}
-				else
-				{
-					PlayerPrefs.SetInt("life2", maxLife);
-				}
-				break;
-			case "AmmoUpgrade":
-				abilityPicture1.SetActive(true);
-				abilityPicture1.GetComponent<Image>().sprite = ammoUpgradePicture;
-				ammoUpgrade.SetActive(true);
 				break;
 			case "WeaponUpgrade":
 				abilityPicture1.SetActive(true);
@@ -268,11 +309,6 @@ public class Player : MonoBehaviour {
 				abilityPicture2.GetComponent<Image>().sprite = dashPicture;
 				dash.SetActive(true);
 				break;
-			case "Teleport":
-				abilityPicture2.SetActive(true);
-				abilityPicture2.GetComponent<Image>().sprite = teleportPicture;
-				teleport.SetActive(true);
-				break;
 			case "Jump":
 				abilityPicture2.SetActive(true);
 				abilityPicture2.GetComponent<Image>().sprite = jumpPicture;
@@ -281,24 +317,6 @@ public class Player : MonoBehaviour {
 			case "Revive":
 				abilityPicture2.SetActive(true);
 				abilityPicture2.GetComponent<Image>().sprite = revivePicture;
-				revive.SetActive(true);
-				break;
-			case "HeartUpgrade":
-				maxLife++;
-				life = maxLife;
-				if (player.tag == "Player")
-				{
-					PlayerPrefs.SetInt("life1", maxLife);
-				}
-				else
-				{
-					PlayerPrefs.SetInt("life2", maxLife);
-				}
-				break;
-			case "AmmoUpgrade":
-				abilityPicture2.SetActive(true);
-				abilityPicture2.GetComponent<Image>().sprite = ammoUpgradePicture;
-				ammoUpgrade.SetActive(true);
 				break;
 			case "WeaponUpgrade":
 				abilityPicture2.SetActive(true);
@@ -309,34 +327,50 @@ public class Player : MonoBehaviour {
 				abilityPicture2.SetActive(false);
 				break;
 		}
+	}
 
-		if(player.tag == "Player")
+	public void ActiveUpgrade()
+	{
+		if (player.tag == "Player")
 		{
-			if (ability1 == "HeartUpgrade")
-			{
-				ability1 = "";
-				game.player1Ability1 = "";
-			}
-			else if (ability2 == "HeartUpgrade")
-			{
-				ability2 = "";
-				game.player1Ability2 = "";
-			}
+			upgrade = game.player1Upgrade;
+		}
+		else if (player.tag == "Player2")
+		{
+			upgrade = game.player2Upgrade;
 		}
 
-		if (player.tag == "Player2")
+		switch (upgrade)
 		{
-			if (ability1 == "HeartUpgrade")
-			{
-				ability1 = "";
-				game.player2Ability1 = "";
+			case "HeartUpgrade":
+				maxLife++;
+				life = maxLife;
 
-			}
-			else if (ability2 == "HeartUpgrade")
-			{
-				ability2 = "";
-				game.player2Ability2 = "";
-			}
+				if (player.tag == "Player")
+				{
+					PlayerPrefs.SetInt("life1", maxLife);
+				}
+				else
+				{
+					PlayerPrefs.SetInt("life2", maxLife);
+				}
+				upgrade = "";
+				break;
+
+			case "AmmoUpgrade":
+				maxAmmo++;
+				ammunition = maxAmmo;
+
+				if (player.tag == "Player")
+				{
+					PlayerPrefs.SetInt("ammo1", maxLife);
+				}
+				else
+				{
+					PlayerPrefs.SetInt("ammo2", maxLife);
+				}
+				upgrade = "";
+				break;
 		}
 	}
 
@@ -361,11 +395,11 @@ public class Player : MonoBehaviour {
 
 	public void Death()
 	{
-		game.SaveData();
 		GameObject _deathEffect = Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
 		Destroy(_deathEffect, 5f);
 		GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().players.Remove(gameObject.transform);
 		Destroy(player);
+		game.SaveData();
 	}
 
 	public void OnTriggerEnter2D(Collider2D collision)

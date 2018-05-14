@@ -515,7 +515,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &120244532
 MonoBehaviour:
@@ -1432,7 +1432,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &355302772
 MonoBehaviour:
@@ -1897,7 +1897,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 897, y: 92}
+  m_AnchoredPosition: {x: 931, y: 97}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &503125501
@@ -2236,12 +2236,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 573857847}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: -1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1587370501}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &574600289
 GameObject:
@@ -2639,7 +2639,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &642864780
 MonoBehaviour:
@@ -2667,9 +2667,11 @@ MonoBehaviour:
   items:
   - {fileID: 1667545251502062, guid: 58437b105dac1fa4681f847ff318bd33, type: 2}
   player1Ability1: 
+  player1Upgrade: 
   player1Ability2: 
   player2Ability1: 
   player2Ability2: 
+  player2Upgrade: 
   fog: {fileID: 1288809606}
   darkParticle: {fileID: 1064109231}
   mainVolumeFloat: 0
@@ -3097,7 +3099,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &794509878
 GameObject:
@@ -3343,7 +3345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 92}
+  m_AnchoredPosition: {x: -13.800049, y: 95.70001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &846125683
@@ -7490,7 +7492,7 @@ Transform:
   - {fileID: 327596889}
   - {fileID: 1974521308}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1122314650
 MonoBehaviour:
@@ -7605,7 +7607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -678, y: 386}
+  m_AnchoredPosition: {x: -691.80005, y: 389.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1177877320
@@ -12248,7 +12250,7 @@ RectTransform:
   - {fileID: 1362997158}
   - {fileID: 1742937556}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12355,7 +12357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -668.2, y: 325.3}
+  m_AnchoredPosition: {x: -682.00006, y: 329}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1494842110
@@ -12628,6 +12630,7 @@ MonoBehaviour:
   player: {fileID: 1741502419}
   ability1: 
   ability2: 
+  upgrade: 
   abilityPicture1: {fileID: 236934124}
   abilityPicture2: {fileID: 472353122}
   wave: {fileID: 1051882651}
@@ -12636,18 +12639,10 @@ MonoBehaviour:
   shieldPicture: {fileID: 0}
   dash: {fileID: 0}
   dashPicture: {fileID: 0}
-  teleport: {fileID: 0}
-  teleportPicture: {fileID: 0}
-  heartUpgrade: {fileID: 0}
-  heartUpgradePicture: {fileID: 0}
-  ammoUpgrade: {fileID: 0}
-  ammoUpgradePicture: {fileID: 0}
   weaponUpgrade: {fileID: 0}
   weaponUpgradePicture: {fileID: 0}
-  jump: {fileID: 0}
   jumpPicture: {fileID: 21300000, guid: e1cd94ff42678c642a727821b5cab0fa, type: 3}
-  revive: {fileID: 0}
-  revivePicture: {fileID: 0}
+  revivePicture: {fileID: 21300000, guid: 8e2dae091a98e9f4e895e8d75a8279d2, type: 3}
   life: 3
   maxLife: 3
   heart:
@@ -12663,6 +12658,8 @@ MonoBehaviour:
   - {fileID: 621349526}
   fullHeart: {fileID: 21300002, guid: c970c83f1f71dff49bfc897c1ead214f, type: 3}
   emptyHeart: {fileID: 21300004, guid: c970c83f1f71dff49bfc897c1ead214f, type: 3}
+  reviveEffect: {fileID: 1032405662180956, guid: 06450a49e4bbf9143b2b182647ed5577,
+    type: 2}
   ammunition: 0
   maxAmmo: 10
   ammo:
@@ -12842,7 +12839,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 22}
+  m_AnchoredPosition: {x: 34, y: 27}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1539805709
@@ -12894,6 +12891,7 @@ MonoBehaviour:
   player: {fileID: 557001245}
   ability1: 
   ability2: 
+  upgrade: 
   abilityPicture1: {fileID: 2007602559}
   abilityPicture2: {fileID: 914857683}
   wave: {fileID: 705663357}
@@ -12902,18 +12900,10 @@ MonoBehaviour:
   shieldPicture: {fileID: 0}
   dash: {fileID: 0}
   dashPicture: {fileID: 0}
-  teleport: {fileID: 0}
-  teleportPicture: {fileID: 0}
-  heartUpgrade: {fileID: 0}
-  heartUpgradePicture: {fileID: 0}
-  ammoUpgrade: {fileID: 0}
-  ammoUpgradePicture: {fileID: 0}
   weaponUpgrade: {fileID: 0}
   weaponUpgradePicture: {fileID: 0}
-  jump: {fileID: 0}
   jumpPicture: {fileID: 21300000, guid: e1cd94ff42678c642a727821b5cab0fa, type: 3}
-  revive: {fileID: 0}
-  revivePicture: {fileID: 0}
+  revivePicture: {fileID: 21300000, guid: 8e2dae091a98e9f4e895e8d75a8279d2, type: 3}
   life: 3
   maxLife: 3
   heart:
@@ -12929,6 +12919,8 @@ MonoBehaviour:
   - {fileID: 228887546}
   fullHeart: {fileID: 21300002, guid: c970c83f1f71dff49bfc897c1ead214f, type: 3}
   emptyHeart: {fileID: 21300004, guid: c970c83f1f71dff49bfc897c1ead214f, type: 3}
+  reviveEffect: {fileID: 1032405662180956, guid: 06450a49e4bbf9143b2b182647ed5577,
+    type: 2}
   ammunition: 0
   maxAmmo: 10
   ammo:
@@ -13063,7 +13055,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 90f71280cb1138d4d93d160d078c0ec4, type: 2}
+  - {fileID: 2100000, guid: fba557c1ae28b3b42929c423871ce7a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13396,6 +13388,7 @@ MonoBehaviour:
   - {fileID: 1509790408}
   - {fileID: 1539805710}
   offset: {x: 0, y: 0, z: -1}
+  offsetFix: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   smoothTime: 0.5
   minZoom: 5
@@ -18164,7 +18157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 287, y: 386}
+  m_AnchoredPosition: {x: 321, y: 391}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1977408203

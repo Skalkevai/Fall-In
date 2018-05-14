@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemShop : MonoBehaviour {
+public class ItemShop : MonoBehaviour
+{
 
 	private Game game;
 	public new string name;
@@ -20,7 +21,7 @@ public class ItemShop : MonoBehaviour {
 
 		else
 		{
-			if (!(collision.GetComponentInChildren<Player>().ability1 == name || collision.GetComponentInChildren<Player>().ability2 == name))
+			if (!(collision.GetComponentInChildren<Player>().ability1 == name || collision.GetComponentInChildren<Player>().ability2 == name) && !(name == "HeartUpgrade" || name == "AmmoUpgrade"))
 			{
 				if (collision.GetComponentInChildren<PlayerController>().useController && collision.GetComponentInChildren<PlayerController>().controller.Action3.WasReleased && !alreadyGet)
 				{
@@ -107,10 +108,62 @@ public class ItemShop : MonoBehaviour {
 					}
 				}
 			}
+
+			if(name == "HeartUpgrade" || name == "AmmoUpgrade")
+			{
+				if (collision.GetComponentInChildren<PlayerController>().useController && collision.GetComponentInChildren<PlayerController>().controller.Action3.WasReleased && !alreadyGet)
+				{
+					if (collision.GetComponentInChildren<Player>().player.tag == "Player")
+					{
+							GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player1Upgrade = name;
+							game.credit -= cost;
+							collision.GetComponentInChildren<Player>().ActiveUpgrade();
+							GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player1Upgrade = "";
+							alreadyGet = true;
+					}
+
+					else if (collision.GetComponentInChildren<Player>().player.tag == "Player2")
+					{
+						GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player2Upgrade = name;
+						game.credit -= cost;
+						collision.GetComponentInChildren<Player>().ActiveUpgrade();
+						GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player2Upgrade = "";
+						alreadyGet = true;
+					}
+				}
+
+				else if (!collision.GetComponentInChildren<PlayerController>().useController && Input.GetKeyDown(KeyCode.E) && !alreadyGet)
+				{
+					if (collision.GetComponentInChildren<Player>().player.tag == "Player")
+					{
+						GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player1Upgrade = name;
+						game.credit -= cost;
+						collision.GetComponentInChildren<Player>().ActiveUpgrade();
+						GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player1Upgrade = "";
+						alreadyGet = true;
+					}
+					else if (collision.GetComponentInChildren<Player>().player.tag == "Player2")
+					{
+						GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player2Upgrade = name;
+						game.credit -= cost;
+						collision.GetComponentInChildren<Player>().ActiveUpgrade();
+						GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>().player2Upgrade = "";
+						alreadyGet = true;
+					}
+				}
+			}
+
 			else
 			{
 				Debug.Log("You already have :" + name);
 			}
 		}
+		Invoke("AlreadyGetOff", 0.2f);
+	}
+
+
+	public void AlreadyGetOff()
+	{
+		alreadyGet = false;
 	}
 }

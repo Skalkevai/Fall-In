@@ -26,9 +26,13 @@ public class Game : MonoBehaviour {
 	public int credit;
 	public List<GameObject> items;
 	public string player1Ability1;
+	public string player1Upgrade;
 	public string player1Ability2;
 	public string player2Ability1;
 	public string player2Ability2;
+	public string player2Upgrade;
+
+
 	public GameObject fog;
 	public GameObject darkParticle;
 	public float mainVolumeFloat;
