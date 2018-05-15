@@ -32,12 +32,17 @@ public class Game : MonoBehaviour {
 	public string player2Ability2;
 	public string player2Upgrade;
 
-
 	public GameObject fog;
 	public GameObject darkParticle;
 	public float mainVolumeFloat;
 	public float musicVolumeFloat;
 	public float effectVolumeFloat;
+
+	[Header("Camera")]
+	public GameObject onePlayer;
+	public GameObject blackSeperator;
+	public GameObject cameraPlayer1;
+	public GameObject cameraPlayer2;
 
 	[Header("Mission")]
 	public string missionName;
@@ -60,14 +65,17 @@ public class Game : MonoBehaviour {
 
 	private void Update()
 	{
-		if (camera.players.Count == 0 && !alreadyDead)
+		if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Lobby"))
 		{
-			timeManager.DoSlownMotion();
-			GameObject _deathScreen = Instantiate(deathScreen,canvas.transform.position,Quaternion.identity);
-			_deathScreen.transform.SetParent(canvas.transform);
-			alreadyDead = true;
-		}
 
+			if (camera.players.Count == 0 && !alreadyDead)
+			{
+				timeManager.DoSlownMotion();
+				GameObject _deathScreen = Instantiate(deathScreen,canvas.transform.position,Quaternion.identity);
+				_deathScreen.transform.SetParent(canvas.transform);
+				alreadyDead = true;
+			}
+		}
 		creditText.text = credit + "$";
 	}
 
@@ -84,6 +92,13 @@ public class Game : MonoBehaviour {
 			ammo2Player.SetActive(false);
 			abilityPlayer2.SetActive(false);
 			player2.SetActive(false);
+			cameraPlayer1.SetActive(false);
+			cameraPlayer2.SetActive(false);
+			blackSeperator.SetActive(false);
+		}
+		else
+		{
+			onePlayer.SetActive(false);
 		}
 
 		nbController = InputManager.Devices.Count;

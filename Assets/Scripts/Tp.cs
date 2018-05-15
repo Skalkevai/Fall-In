@@ -29,10 +29,11 @@ public class Tp: MonoBehaviour {
 				{
 					playerController = collision.GetComponent<PlayerController>();
 
-					if (playerController.controller.Action3)
+					if (playerController.controller.Action3.WasPressed)
 					{
 						game.SaveData();
 						playerController.transform.parent.position = placeToSpawn.position;
+						playerController.transform.parent.position = new Vector3(playerController.transform.parent.position.x, playerController.transform.parent.position.y,-1);
 						camera.transform.position = placeToSpawn.position;
 				}
 
@@ -43,6 +44,7 @@ public class Tp: MonoBehaviour {
 					{
 						game.SaveData();
 						playerController.transform.parent.position = placeToSpawn.position;
+						playerController.transform.parent.position = new Vector3(playerController.transform.parent.position.x, playerController.transform.parent.position.y, -1);
 						camera.transform.position = placeToSpawn.position;
 
 						if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Lobby"))
