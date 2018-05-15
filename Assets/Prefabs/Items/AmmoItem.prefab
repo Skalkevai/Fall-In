@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212065671498904896}
   - component: {fileID: 61569304306054428}
   - component: {fileID: 114253156241884328}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: AmmoItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

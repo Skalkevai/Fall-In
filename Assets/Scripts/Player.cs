@@ -53,6 +53,7 @@ public class Player : MonoBehaviour {
 	public float invincibleEffect = 2f;
 	public bool invincible;
 	private bool isReload;
+	private bool isReviving;
 	public Game game;
 	public GameObject hitEffect;
 	public GameObject deathEffect;
@@ -77,6 +78,15 @@ public class Player : MonoBehaviour {
 			PlayerPrefs.SetInt("life2", 3);
 		}
 
+		if (!PlayerPrefs.HasKey("ammo1"))
+		{
+			PlayerPrefs.SetInt("ammo1", 10);
+		}
+		if (!PlayerPrefs.HasKey("ammo2"))
+		{
+			PlayerPrefs.SetInt("ammo2", 10);
+		}
+
 		if (player.tag == "Player")
 		{
 			maxLife = PlayerPrefs.GetInt("life1");
@@ -84,6 +94,15 @@ public class Player : MonoBehaviour {
 		else if (player.tag == "Player2")
 		{
 			maxLife = PlayerPrefs.GetInt("life2");
+		}
+
+		if (player.tag == "Player")
+		{
+			maxAmmo = PlayerPrefs.GetInt("ammo1");
+		}
+		else if (player.tag == "Player2")
+		{
+			maxAmmo = PlayerPrefs.GetInt("ammo2");
 		}
 
 		life = maxLife;
@@ -143,15 +162,17 @@ public class Player : MonoBehaviour {
 			}
 
 		//Detect if Dead
-		if (life <= 0)
+		if (life <= 0 && !isReviving)
 		{
 			if (ability1 == "Revive")
 			{
+				isReviving = true;
 				FakeDeath();
 				Invoke("Revive",1f);
 			}
 			else if (ability2 == "Revive")
 			{
+				isReviving = true;
 				FakeDeath();
 				Invoke("Revive", 1f);
 			}
@@ -197,6 +218,7 @@ public class Player : MonoBehaviour {
 		GameObject _reviveEffect = Instantiate(reviveEffect,transform.position,Quaternion.identity);
 		_reviveEffect.transform.SetParent(player.gameObject.transform);
 		gameObject.SetActive(true);
+		isReviving = false;
 
 		if (ability1 == "Revive")
 		{
@@ -363,11 +385,11 @@ public class Player : MonoBehaviour {
 
 				if (player.tag == "Player")
 				{
-					PlayerPrefs.SetInt("ammo1", maxLife);
+					PlayerPrefs.SetInt("ammo1", maxAmmo);
 				}
 				else
 				{
-					PlayerPrefs.SetInt("ammo2", maxLife);
+					PlayerPrefs.SetInt("ammo2", maxAmmo);
 				}
 				upgrade = "";
 				break;

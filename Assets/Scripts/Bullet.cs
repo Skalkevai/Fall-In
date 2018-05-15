@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour {
 
 		if (collision.transform.parent && collision.gameObject.tag != "Exit")
 		{
-			if (collision.transform.parent.tag != "Player" && collision.transform.parent.tag != "Player2" && collision.gameObject.tag != "Wave")
+			if (collision.transform.parent.tag != "Player" && collision.transform.parent.tag != "Player2" && collision.gameObject.tag != "Wave" && collision.tag != "Shield")
 			{
 				GameObject _particle = Instantiate(particle, gameObject.transform.position, Quaternion.identity);
 				Destroy(gameObject);

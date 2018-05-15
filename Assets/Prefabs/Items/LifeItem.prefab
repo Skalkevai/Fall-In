@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212017397764180656}
   - component: {fileID: 61027125434734876}
   - component: {fileID: 114784595815835158}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LifeItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3bedfa4fef210418b8d422b2b00c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Revive
+  name: HeartUpgrade
   cost: 500
 --- !u!212 &212017397764180656
 SpriteRenderer:

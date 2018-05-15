@@ -343,9 +343,57 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 705663356}
+  - {fileID: 239449212}
   m_Father: {fileID: 557001247}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &60087073
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1201569538}
+    m_Modifications:
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114976056225960730, guid: a09b3eb4a3a04cb4a9911aab395b2118,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1741502419}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &70370125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1085,63 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 236934124}
+--- !u!1001 &239449211
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 54449362}
+    m_Modifications:
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114976056225960730, guid: a09b3eb4a3a04cb4a9911aab395b2118,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 557001245}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a09b3eb4a3a04cb4a9911aab395b2118, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &239449212 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118,
+    type: 2}
+  m_PrefabInternal: {fileID: 239449211}
+--- !u!1 &239449213 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1711541836051700, guid: a09b3eb4a3a04cb4a9911aab395b2118,
+    type: 2}
+  m_PrefabInternal: {fileID: 239449211}
 --- !u!1 &240302897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3682,6 +3787,16 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 977861627}
+--- !u!1 &998010612 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1711541836051700, guid: a09b3eb4a3a04cb4a9911aab395b2118,
+    type: 2}
+  m_PrefabInternal: {fileID: 60087073}
+--- !u!4 &998010613 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4103885313315234, guid: a09b3eb4a3a04cb4a9911aab395b2118,
+    type: 2}
+  m_PrefabInternal: {fileID: 60087073}
 --- !u!1 &1039301060
 GameObject:
   m_ObjectHideFlags: 0
@@ -7658,6 +7773,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1051882650}
+  - {fileID: 998010613}
   m_Father: {fileID: 1741502421}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12635,8 +12751,8 @@ MonoBehaviour:
   abilityPicture2: {fileID: 472353122}
   wave: {fileID: 1051882651}
   wavePicture: {fileID: 21300000, guid: a31be686cfb70774e867f7dc82cc1258, type: 3}
-  shield: {fileID: 0}
-  shieldPicture: {fileID: 0}
+  shield: {fileID: 998010612}
+  shieldPicture: {fileID: 21300000, guid: 9a1f04efe52705344b6b985c94b0a827, type: 3}
   dash: {fileID: 0}
   dashPicture: {fileID: 0}
   weaponUpgrade: {fileID: 0}
@@ -12896,8 +13012,8 @@ MonoBehaviour:
   abilityPicture2: {fileID: 914857683}
   wave: {fileID: 705663357}
   wavePicture: {fileID: 21300000, guid: a31be686cfb70774e867f7dc82cc1258, type: 3}
-  shield: {fileID: 0}
-  shieldPicture: {fileID: 0}
+  shield: {fileID: 239449213}
+  shieldPicture: {fileID: 21300000, guid: 9a1f04efe52705344b6b985c94b0a827, type: 3}
   dash: {fileID: 0}
   dashPicture: {fileID: 0}
   weaponUpgrade: {fileID: 0}

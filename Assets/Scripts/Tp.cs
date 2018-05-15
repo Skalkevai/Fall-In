@@ -44,14 +44,14 @@ public class Tp: MonoBehaviour {
 						game.SaveData();
 						playerController.transform.parent.position = placeToSpawn.position;
 						camera.transform.position = placeToSpawn.position;
-				}
+
+						if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Lobby"))
+						{
+							game.credit += 200;
+						}
+					}
 
 				}
 			}
-
-		if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Lobby"))
-		{
-			game.credit += 200;
-		}
 	}
 }

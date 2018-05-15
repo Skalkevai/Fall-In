@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour {
 	public Vector3 offsetFix;
 	public Vector3 velocity;
 	private Vector3 newPositon;
-	public float smoothTime = .4f;
+	public float smoothTime = .1f;
 
 	public float minZoom;
 	public float maxZoom;

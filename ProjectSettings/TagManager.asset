@@ -12,6 +12,7 @@ TagManager:
   - Item
   - Wave
   - Bullet
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - Eye
   - BackGround
   - Platform
-  - 
-  - 
+  - Shield
+  - Item
   - 
   - 
   - 

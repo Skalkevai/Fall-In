@@ -85,7 +85,6 @@ MonoBehaviour:
   damage: 0
   range: 0
   countdownTime: 15
-  countdown: 0
   playerController: {fileID: 0}
 --- !u!135 &135385762538548154
 SphereCollider:

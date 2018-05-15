@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212336137876417774}
   - component: {fileID: 61541241984927724}
   - component: {fileID: 114366164036772120}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ReviveItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

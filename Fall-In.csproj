@@ -244,7 +244,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_MK\MKGlowFree\MKGlowFree.cs" />
-    <Compile Include="Assets\DeathScreen.cs" />
     <Compile Include="Assets\InControl-master\Assets\InControl\Examples\Basic\CubeController.cs" />
     <Compile Include="Assets\InControl-master\Assets\InControl\Examples\CustomProfile\CubeController.cs" />
     <Compile Include="Assets\InControl-master\Assets\InControl\Examples\CustomProfile\KeyboardAndMouseProfile.cs" />
@@ -415,6 +414,7 @@
     <Compile Include="Assets\Scripts\CameraShake.cs" />
     <Compile Include="Assets\Scripts\ChocWave.cs" />
     <Compile Include="Assets\Scripts\ChocWaveDamage.cs" />
+    <Compile Include="Assets\Scripts\DeathScreen.cs" />
     <Compile Include="Assets\Scripts\Dialog.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Game.cs" />
@@ -427,10 +427,12 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerGhostSprite.cs" />
     <Compile Include="Assets\Scripts\PlayerGhostSprite2.cs" />
+    <Compile Include="Assets\Scripts\Shield.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
     <Compile Include="Assets\Scripts\ShootingJoyStick.cs" />
     <Compile Include="Assets\Scripts\Shop.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
+    <Compile Include="Assets\Scripts\TimeManager.cs" />
     <Compile Include="Assets\Scripts\Tp.cs" />
     <Compile Include="Assets\Scripts\TpLevel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
@@ -466,7 +468,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\TimeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\InControl-master\Assets\InControl\README\README.txt" />
