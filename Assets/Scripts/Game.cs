@@ -92,13 +92,19 @@ public class Game : MonoBehaviour {
 			ammo2Player.SetActive(false);
 			abilityPlayer2.SetActive(false);
 			player2.SetActive(false);
-			cameraPlayer1.SetActive(false);
-			cameraPlayer2.SetActive(false);
-			blackSeperator.SetActive(false);
+			if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Lobby"))
+			{
+				cameraPlayer1.SetActive(false);
+				cameraPlayer2.SetActive(false);
+				blackSeperator.SetActive(false);
+			}
 		}
 		else
 		{
-			onePlayer.SetActive(false);
+			if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Lobby"))
+			{
+				onePlayer.SetActive(false);
+			}
 		}
 
 		nbController = InputManager.Devices.Count;
