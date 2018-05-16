@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Skalkevai/Desktop/Test Fall-In(.exe)/Fall-In.v.0.3.2.exe
+C:/Users/Skalkevai/Desktop/Test Fall-In(.exe)/Fall-In.v.0.3.4.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Lobby.unity

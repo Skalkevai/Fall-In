@@ -92,6 +92,7 @@ public class Game : MonoBehaviour {
 			ammo2Player.SetActive(false);
 			abilityPlayer2.SetActive(false);
 			player2.SetActive(false);
+
 			if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Lobby"))
 			{
 				cameraPlayer1.SetActive(false);
@@ -112,23 +113,31 @@ public class Game : MonoBehaviour {
 
 		if (player1Gamepad && !player2Gamepad)
 		{
-			playerController1.controller = InputManager.Devices[0]; ;
+			playerController1.controller = InputManager.Devices[0];
 			playerController1.useController = true;
 			playerController2.useController = false;
 		}
 		else if (player2Gamepad && !player1Gamepad)
 		{
-			playerController2.controller = InputManager.Devices[0]; ;
+			if (multi)
+			{
+				playerController2.controller = InputManager.Devices[0];
+			}
 			playerController2.useController = true;
 			playerController1.useController = false;
 		}
 		else if (player1Gamepad && player2Gamepad)
 		{
-			playerController1.controller = InputManager.Devices[0]; ;
+			playerController1.controller = InputManager.Devices[0];
 			playerController1.useController = true;
 
-			playerController2.controller = InputManager.Devices[1]; ;
-			playerController2.useController = true;
+			if (multi)
+			{
+				playerController2.controller = InputManager.Devices[1];
+				playerController2.useController = true;
+			
+			}
+		
 		}
 
 		if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level1"))

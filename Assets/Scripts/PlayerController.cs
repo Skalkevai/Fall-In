@@ -104,12 +104,6 @@ public class PlayerController : MonoBehaviour {
                     extraJump--;
                 }
             }
-            else if (controller.Action2.WasPressed && !isReload)
-            {
-                isReload = true;
-                GetComponent<Player>().Reload();
-
-            }
 		}
 
 		else
@@ -133,11 +127,6 @@ public class PlayerController : MonoBehaviour {
 					extraJump--;
 				}
 			}
-            else if(Input.GetKeyDown(KeyCode.R))
-            {
-                isReload = true;
-                GetComponent<Player>().Reload();
-            }
 		}
 		
 		
