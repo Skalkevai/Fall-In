@@ -55,7 +55,7 @@ public class DashMove : MonoBehaviour {
 
 		if (playerController.useController)
 		{
-			if (playerController.controller.Action2 && !countdown)
+			if (playerController.controller.LeftBumper && !countdown)
 			{
 				if(playerController.facingRight)
 				{

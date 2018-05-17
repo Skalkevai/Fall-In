@@ -188,6 +188,16 @@ public class Player : MonoBehaviour {
             GetComponent<PlayerController>().isReload = true;
             Reload();
         }
+		if (player.GetComponentInChildren<PlayerController>().useController && player.GetComponentInChildren<PlayerController>().controller.Action2.WasPressed)
+		{
+			GetComponent<PlayerController>().isReload = true;
+			Reload();
+		}
+		else if (!player.GetComponentInChildren<PlayerController>().useController && Input.GetKeyDown(KeyCode.R))
+		{
+			GetComponent<PlayerController>().isReload = true;
+			Reload();
+		}
 
         //The player gain invincibility during a short period
         if (invincible && timeInvincible > 0)

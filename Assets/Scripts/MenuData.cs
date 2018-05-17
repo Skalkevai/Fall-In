@@ -239,6 +239,35 @@ public class MenuData : MonoBehaviour {
 
 	public void LoadData()
 	{
+
+		if (!PlayerPrefs.HasKey("mainVolume"))
+		{
+			PlayerPrefs.SetFloat("mainVolume", 0.1f);
+		}
+		if (!PlayerPrefs.HasKey("musicVolume"))
+		{
+			PlayerPrefs.SetFloat("musicVolume", 0.1f);
+		}
+		if (!PlayerPrefs.HasKey("effectVolume"))
+		{
+			PlayerPrefs.SetFloat("effectVolume", 0.1f);
+		}
+		if (!PlayerPrefs.HasKey("effectVolume"))
+		{
+			PlayerPrefs.SetFloat("effectVolume", 0.1f);
+		}
+		if (!PlayerPrefs.HasKey("particle"))
+		{
+			PlayerPrefs.SetString("particle", "True");
+		}
+		if (!PlayerPrefs.HasKey("fog"))
+		{
+			PlayerPrefs.SetString("fog", "True");
+		}
+
+
+
+
 		if (PlayerPrefs.HasKey("Multi"))
 		{
 			if (PlayerPrefs.GetString("Multi") == "True")

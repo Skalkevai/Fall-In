@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour {
 
 	private Camera camera;
 	public GameObject player;
+	private Animator anim;
 
 	public int speed;
 
@@ -22,6 +23,7 @@ public class Shooting : MonoBehaviour {
 
 	private void Start()
 	{
+		anim = GetComponentInParent<Animator>();
 		camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 	}
 
@@ -32,13 +34,14 @@ public class Shooting : MonoBehaviour {
 		myPos = new Vector2(player.transform.position.x, player.transform.position.y);
 		target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-		if (Input.GetMouseButton(0) && Time.time >= nextTimeToFire && player.GetComponent<Player>().ammunition > 0 && !isReload && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Lobby"))
+		if (Input.GetMouseButton(0) && Time.time >= nextTimeToFire && player.GetComponentInChildren<Player>().ammunition > 0 && !isReload && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Lobby"))
 		{
 			nextTimeToFire = Time.time + 1f / fireRate;
 			myPos = new Vector2(player.transform.position.x, player.transform.position.y);
 			target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			player.GetComponent<Player>().ammunition--;
+			player.GetComponentInChildren<Player>().ammunition--;
 			Shoot();
+			anim.SetTrigger("fire");
 		}
 	}
 
@@ -47,13 +50,13 @@ public class Shooting : MonoBehaviour {
 		direction = target - myPos;
 		direction.Normalize();
 
-		if (direction.x < 0 && player.GetComponent<PlayerController>().facingRight)
+		if (direction.x < 0 && player.GetComponentInChildren<PlayerController>().facingRight)
 		{
-			player.GetComponent<PlayerController>().Flip();
+			player.GetComponentInChildren<PlayerController>().Flip();
 		}
-		else if (direction.x > 0 && !player.GetComponent<PlayerController>().facingRight)
+		else if (direction.x > 0 && !player.GetComponentInChildren<PlayerController>().facingRight)
 		{
-			player.GetComponent<PlayerController>().Flip();
+			player.GetComponentInChildren<PlayerController>().Flip();
 		}
 
 		FindObjectOfType<AudioManager>().Play("PlayerShoot");

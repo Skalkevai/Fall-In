@@ -7,6 +7,8 @@ public class TpLevel : MonoBehaviour {
 
 	public PlayerController playerController;
 	public Game game;
+	public GameObject warning;
+
 
 	private string missionToLoad;
 
@@ -19,11 +21,8 @@ public class TpLevel : MonoBehaviour {
 	{
 		missionToLoad = game.missionLvl;
 
-		if (missionToLoad != "")
+		if (missionToLoad != "" && collision.transform.parent.tag == "Player" || collision.transform.parent.tag == "Player2")
 		{
-
-			if (collision.transform.parent.tag == "Player" || collision.transform.parent.tag == "Player2")
-			{
 				playerController = collision.GetComponent<PlayerController>();
 
 
@@ -47,11 +46,18 @@ public class TpLevel : MonoBehaviour {
 					}
 
 				}
-			}
 		}
 		else
 		{
-			Debug.Log("You don't have a mission !");
+			warning.SetActive(true);
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.transform.parent.tag == "Player" || collision.transform.parent.tag == "Player2")
+		{
+			warning.SetActive(false);
 		}
 	}
 }

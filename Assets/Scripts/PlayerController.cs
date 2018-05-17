@@ -6,6 +6,8 @@ using InControl;
 
 public class PlayerController : MonoBehaviour {
 
+	private Animator anim;
+
 	public InputDevice controller;
 	public bool useController;
 
@@ -17,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed;
 	public float jumpForce;
-	private float moveInput;
+	public float moveInput;
 	private Rigidbody2D rb;
 	public GameObject ghost;
 
@@ -39,10 +41,12 @@ public class PlayerController : MonoBehaviour {
 	public int extraJump;
 	public int extraJumpValue;
 
+
 	private void Start()
 	{
 		rb = GetComponentInParent<Rigidbody2D>();
 		extraJump = extraJumpValue;
+		anim = GetComponent<Animator>();
 	}
 
 	private void FixedUpdate()
@@ -61,9 +65,8 @@ public class PlayerController : MonoBehaviour {
 			moveInput = Input.GetAxis("Horizontal");
 		}
 
-		
-
 		rb.velocity = new Vector2(moveInput * speed,rb.velocity.y);
+
 
 		if (facingRight == false && moveInput > 0)
 		{
@@ -77,6 +80,23 @@ public class PlayerController : MonoBehaviour {
 
 	private void Update()
 	{
+		if(isWalled && rb.velocity.y < 0)
+		{
+			anim.SetBool("isWall", true);
+		}
+		else
+		{
+			anim.SetBool("isWall", false);
+		}
+
+		if(moveInput != 0)
+		{
+			anim.SetBool("isRunning", true);
+		}
+		else if(moveInput == 0)
+		{
+			anim.SetBool("isRunning", false);
+		}
 
 		if (isGrounded == true)
 		{
@@ -103,6 +123,8 @@ public class PlayerController : MonoBehaviour {
                     new WaitForSeconds(0.1f);
                     extraJump--;
                 }
+
+				anim.SetTrigger("jump");
             }
 		}
 
@@ -126,6 +148,7 @@ public class PlayerController : MonoBehaviour {
 					new WaitForSeconds(0.1f);
 					extraJump--;
 				}
+				anim.SetTrigger("jump");
 			}
 		}
 		

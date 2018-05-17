@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4680554669168338}
   - component: {fileID: 61479331461376466}
-  - component: {fileID: 114328046871918188}
+  - component: {fileID: 114255507986650364}
   m_Layer: 0
   m_Name: ExitPoint
   m_TagString: Exit
@@ -153,7 +153,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14769678, y: 1.5025024}
   m_EdgeRadius: 0
---- !u!114 &114328046871918188
+--- !u!114 &114255507986650364
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -161,12 +161,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1740772118281414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ab8b5af030e8df48802e78f2c01dda3, type: 3}
+  m_Script: {fileID: 11500000, guid: 923d3398b0b980a44b91d5e913c7ff04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   game: {fileID: 0}
-  sceneToLoad: Lobby
+  missionToLoad: Lobby
 --- !u!198 &198076264064591536
 ParticleSystem:
   m_ObjectHideFlags: 1
