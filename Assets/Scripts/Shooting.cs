@@ -62,5 +62,6 @@ public class Shooting : MonoBehaviour {
 		FindObjectOfType<AudioManager>().Play("PlayerShoot");
 		GameObject _bullet = Instantiate(bullet,myPos,Quaternion.identity);
 		_bullet.GetComponent<Rigidbody2D>().velocity = direction * speed;
+		_bullet.transform.SetParent (player.transform);
 	}
 }

@@ -18,7 +18,7 @@ public class AI_MonsterWall : MonoBehaviour {
 	void Start ()
 	{
 
-		if (transform.position.x == 5)
+		if (transform.position.x >= 5)
 		{
 			Flip();
 		}

@@ -75,5 +75,6 @@ public class ShootingJoyStick : MonoBehaviour {
 		FindObjectOfType<AudioManager>().Play("PlayerShoot");
 		GameObject _bullet = Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
 		_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(x,y).normalized * speed;
+		_bullet.transform.SetParent (player.transform);
 	}
 }

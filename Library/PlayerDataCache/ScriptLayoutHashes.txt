@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Skalkevai/Desktop/Test Fall-In(.exe)/Fall-In.v.0.4.2.exe
+C:/Users/Skalkevai/Desktop/Test Fall-In(.exe)/Fall-In.v.0.4.3.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Lobby.unity
@@ -216,6 +216,7 @@ f22b8ce780e323c542ba1f52d9080ac6 Assembly-CSharp.dll:.MapGenerator
 d5de916c074b6f9282b0e1b1a9dd8d66 Assembly-CSharp.dll:.TimeManager
 8a50d3d11bf0cc541f5c35347dd25633 Assembly-CSharp.dll:TMPro.Examples.ShaderPropAnimator
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CameraShake
+b1750558cbc9bb96ff0e0b8e9a9f4ae1 Assembly-CSharp.dll:.TpScene
 5d4867a4ee62ca1cb1833420a21abefe Assembly-CSharp.dll:.ChocWave
 32e8fe00b63ed946490b898f6024a2f2 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
 76015de5fcb247eeb8df66c001d5a22d Assembly-CSharp.dll:TMPro.Examples.TMP_FrameRateCounter
@@ -279,4 +280,3 @@ e1d2ef29bedbe9f8c7dd41a9d41f1066 Assembly-CSharp.dll:.CameraControllerSplitScree
 22504aca875bfe9807f9961840091822 Assembly-CSharp.dll:.Mission
 34e025057ef78b1bf238460cdf6583a3 Assembly-CSharp.dll:TMPro.Examples.ObjectSpin
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.SimpleScript
-b1750558cbc9bb96ff0e0b8e9a9f4ae1 Assembly-CSharp.dll:.TpScene

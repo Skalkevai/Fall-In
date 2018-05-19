@@ -22,6 +22,8 @@ public class MapGenerator : MonoBehaviour
 	public List<GameObject> listFloorMonster;
 	public List<GameObject> listWallMonster;
 	public List<GameObject> listFlyingMonster;
+	public GameObject torchL;
+	public GameObject torchR;
 
 	public GameObject map;
 	public GameObject enemy;
@@ -55,12 +57,21 @@ public class MapGenerator : MonoBehaviour
 
 			GameObject platform = Instantiate(listPlatform[r], new Vector3(x, y, 0), Quaternion.identity);
 			platform.transform.SetParent(map.transform);
+		
+			//Spawn Torch
+			if (y%2 == 0)
+			{
+				
+					GameObject _torchL = Instantiate(torchL, new Vector3(-4.5f , y + 1, 0), Quaternion.identity);
+					_torchL.transform.SetParent(map.transform);
 
-			r = Random.Range(0, listFloorMonster.Count);
-			int spawnChance = Random.Range(0, 3);
-
+					GameObject _torchR = Instantiate(torchR, new Vector3(4.5f , y + 1, 0), Quaternion.identity);
+					_torchR.transform.SetParent(map.transform);
+			}
 
 			//Spawn BigBlob & Blob
+			r = Random.Range(0, listFloorMonster.Count);
+			int spawnChance = Random.Range(0, 3);
 			if (spawnChance == 1)
 			{
 				GameObject monster = listFloorMonster[r];
@@ -88,16 +99,15 @@ public class MapGenerator : MonoBehaviour
 				GameObject monster = listWallMonster[r];
 
 				int side = Random.Range(0, 2);
-				int h = Random.Range(1, 3);
 
 				if (side == 1)
 				{
-					GameObject _monster = Instantiate(monster, new Vector3(-5, y + h, 0), Quaternion.identity);
+					GameObject _monster = Instantiate(monster, new Vector3(-5 , y + 2, 0), Quaternion.identity);
 					_monster.transform.SetParent(enemy.transform);
 				}
 				else if (side == 0)
 				{
-					GameObject _monster = Instantiate(monster, new Vector3(5, y + h, 0), Quaternion.identity);
+					GameObject _monster = Instantiate(monster, new Vector3(5 , y + 2, 0), Quaternion.identity);
 					_monster.transform.SetParent(enemy.transform);
 				}
 			}
